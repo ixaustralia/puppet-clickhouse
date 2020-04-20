@@ -80,8 +80,8 @@
     <<%= remote %>>
   <%- shards.each do |shard| -%>
       <shard>
-    <%- if shard.include?('wieght') -%>
-        <wieght><%= shard['wieght'] %></wieght>
+    <%- if shard.include?('weight') -%>
+        <weight><%= shard['weight'] %></weight>
     <%- end -%>
     <%- if shard.fetch('internal_replication', false) -%>
 		<internal_replication>true</internal_replication>
@@ -94,10 +94,10 @@
 		  <secure>1</secure>
       <%- end -%>
       <%- if replica.include?('user') -%>
-          <user><%= @user %></user>
+          <user><%= replica['user'] %></user>
       <%- end -%>
       <%- if replica.include?('password') -%>
-          <password><%= @password %></password>
+          <password><%= replica['password'] %></password>
       <%- end -%>
         </replica>
     <%- end -%>
@@ -156,6 +156,9 @@
 <%- end -%>
 <%- if @max_table_size_to_drop -%>
   <max_table_size_to_drop><%= @max_table_size_to_drop %></max_table_size_to_drop>
+<%- end -%>
+<%- if @max_partition_size_to_drop -%>
+  <max_partition_size_to_drop><%= @max_partition_size_to_drop %></max_partition_size_to_drop>
 <%- end -%>
   <format_schema_path><%= trailing_slash(@format_schema_path) %></format_schema_path>
 <%- if @disable_internal_dns_cache -%>

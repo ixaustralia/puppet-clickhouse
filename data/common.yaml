@@ -76,13 +76,16 @@ clickhouse::distributed_ddl_path: /clickhouse/task_queue/ddl
 clickhouse::distributed_ddl_profile: ~
 clickhouse::max_suspicious_broken_parts: ~
 clickhouse::max_table_size_to_drop: ~
+clickhouse::max_partition_size_to_drop: ~
 clickhouse::format_schema_path: /var/lib/clickhouse/format_schemas
 clickhouse::disable_internal_dns_cache: false
 clickhouse::default_password: ''
 clickhouse::default_networks:
-  - '::/00'
+  - '::/0'
 clickhouse::default_profile: default
 clickhouse::default_quota: default
+clickhouse::default_allow_databases: ~
+clickhouse::default_filter: ~
 clickhouse::default_duration: 3600
 clickhouse::default_queries: 0
 clickhouse::default_errors: 0
